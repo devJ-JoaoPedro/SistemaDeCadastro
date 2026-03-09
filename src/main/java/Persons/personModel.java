@@ -1,5 +1,8 @@
-package dev.jpeu.cadSys;
+package Persons;
+import Jobs.jobsModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_person")
@@ -7,11 +10,16 @@ public class personModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String name;
-    String cpf;
-    String email;
-    String contact;
+    private Long id;
+    private String name;
+    private String cpf;
+    private String email;
+    private String contact;
+
+    //cada pessoa so pode ter um trabalho
+    @ManyToMany
+    @JoinColumn(name = "jobs_id") // foreing key
+    private jobsModel jobs;
 
     public personModel() {
     }
