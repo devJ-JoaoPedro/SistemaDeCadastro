@@ -1,6 +1,6 @@
-package Jobs;
+package dev.jpeu.cadSys.Jobs;
 
-import Persons.personModel;
+import dev.jpeu.cadSys.Persons.personModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +23,7 @@ public class jobsModel {
 
     // um trabalho pode conter varias pessoas
     @OneToMany(mappedBy = "jobs")
-    private List<personModel> person;
+    private List<personModel> persons;
 
 
 }

@@ -1,5 +1,5 @@
-package Persons;
-import Jobs.jobsModel;
+package dev.jpeu.cadSys.Persons;
+import dev.jpeu.cadSys.Jobs.jobsModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,8 +24,8 @@ public class personModel {
     private String contact;
 
     //cada pessoa so pode ter um trabalho
-    @ManyToMany
-    @JoinColumn(name = "jobs_id") // foreing key
+    @ManyToOne
+    @JoinColumn(name = "jobs_id")
     private jobsModel jobs;
 
 
